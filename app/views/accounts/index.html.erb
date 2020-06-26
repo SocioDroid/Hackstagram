@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <% @posts.each do |post| %>
+                <div class = "insta-post">
+                    <div class = "post-meta">                     
+                        <%= link_to profile_picture_thumb(post.account), profile_path(post.account.username) %>
+                        
+                        <%= link_to post.account.username, profile_path(post.account.username), class: "text-dark" %> 
+                    </div>
+                    <%= image_tag post.image.url, class: "img img-fluid"%>
+                    <div class="post-details">
+                        <div class="post-actions">
+                            <i class="fa fa-heart like-<%= post.id %> <%= 'active' if post_liked_by_user?(post.id) %> fa-2x post-like" data-id="<%= post.id %>"></i>
+                            
+                            <%= link_to post_path(post.id) do %>
+                                <i class="fa fa-comment fa-2x post-comment" ></i>
+                            <%end%>
+                        </div>
+                        <p><strong id="post-<%= post.id %>-likes"> <%= post.total_likes_count%> likes</strong></p>
+                        <p><strong id="post-<%= post.id %>-comments"><%= link_to post.account.username,  profile_path(post.account.username), class: "text-dark" %></strong></p>
+                        <%= simple_format post.description%>
+                        <% if !post.total_comments_count.nil? && post.total_comments_count > 2 %>
+                            <%= link_to post_path(post.id) do%>
+                                <div class="text-muted" style="font-size: 14px;"> 
+                                    View all comments
+                                </div>
+                            <%end%>
+                        <%end%>
+                        <p class="text-muted" style="font-size: 13px"><%= time_ago_in_words post.created_at%> ago</p>
+                        <div class="comments-section"><%= render "posts/comments", post: post, comments: Comment.includes(:account).where(post_id: post.id) %></div>
+                    </div>
+                    <div class="comment-box">
+                        <%= form_for @comment do |f| %>
+                            <%= f.hidden_field :post_id, value: post.id%>
+                            <div class="input-group">
+                                <%= f.text_field :comment, placeholder: "Add comment here...", class: "form-control post-comment"%>
+                                <div class="input-group-append">
+                                    <%= f.submit "Post", class: "btn btn-success float-right"%> 
+                                </div>
+                            </div>
+                        <%end%>
+
+                    </div>
+                </div>   
+            <% end %>
+        </div>
+        <div class="col-4">
+            <div class="account-summary">
+                <p class="m-0">
+                <%= link_to image_tag(current_account.image.thumb.url, class: "float-left m-r-15 img-circle"), profile_path(current_account.username) if current_account.image.present? %> 
+                <strong><%= link_to current_account.username, profile_path(current_account.username) if current_account.image.present? %><strong><br>
+                <span style = "font-size: 15px;" ><%= current_account.full_name%></span>
+                </p>
+                
+            </div>
+            <div class="follower-suggestion" style="margin-bottom: 100px">
+                <%= link_to "View All", "#", class:"float-right text-dark" %>
+                <p class="text-muted"><strong>Suggestions for you</strong></p>
+                <%= render "accounts/follower_suggestions" %>
+            </div>
+
+        </div>
+
+    </div>
+</div>
