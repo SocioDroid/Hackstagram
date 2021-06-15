@@ -18,6 +18,16 @@
       
 </p>
 
+## About 💡
+<div id="about">
+<table>
+<tr>
+<td>
+The project, “HACKSTAGRAM” is a Ruby on Rails application consisting of a basic UI for users to enter personal data, like and comment on other's post and follow friends. The entered data is then stored in a S3 bucket. The information stored in database is fetched and diplayed in an Instagram inspired format for users to be able to see the posts.
+</td>
+</tr>
+</table>
+</div>
   
 ## DEMO ⚡️
 <h1 align="left">
@@ -28,3 +38,9 @@
  - Ruby version 2.5.5
  - Uses AWS S3 bucket to store the images.
  - Gems: devise, acts_as_follower, populator, faker
+
+## Author 👤
+
+| [![Aishwarya Kendle](https://i.ibb.co/2vmw2pB/47445489-1-1.jpg)](https://www.linkedin.com/in/aishwarya-kendle/) 	|
+|:---------------------------------------------------------------------------------------------------------:	|
+|                                            **Aishwarya Kendle**                                            	|
