@@ -19,7 +19,7 @@
 </p>
 
   
-## Features ⚡️
+## DEMO ⚡️
 <h1 align="left">
    <img src="hackstagram.gif" alt="hackstagram-demo" width="700px">
   <br>
