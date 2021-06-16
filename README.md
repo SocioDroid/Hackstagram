@@ -20,7 +20,7 @@
 <table>
 <tr>
 <td>
-The project, “HACKSTAGRAM” is a Ruby on Rails application consisting of a basic UI for users to enter personal data, like and comment on other's post and follow friends. The entered data is then stored in a S3 bucket. The information stored in database is fetched and diplayed in an Instagram inspired format for users to be able to see the posts.
+The project, “HACKSTAGRAM” is a Ruby on Rails application consisting of an UI for users to enter personal data, like and comment on other's post and follow friends. The entered data is then stored in a S3 bucket. The information stored in database is fetched and diplayed in an Instagram inspired format for users to be able to see the posts.
 </td>
 </tr>
 </table>
