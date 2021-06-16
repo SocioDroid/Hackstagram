@@ -3,9 +3,6 @@
   <a href="https://github.com/SocioDroid//Hackstagram/archive/main.zip"><img src="https://i.ibb.co/D9XsK1K/HACKSTAGRAM.png" alt="Hackstagram"></a>
 </h1>
 
-
-<h4 align="center">A CLI utility integrated with LeetCode for downloading your submissions and many more things</h4>
-
 <h2 align="center"><a href = "https://hackstagram.herokuapp.com">Click here to view the deployed version</a></h4>
 
 <p align="center">	
