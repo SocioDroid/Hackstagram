@@ -32,7 +32,7 @@ gem 'turbolinks', '~> 5'
 # gem 'image_processing', '~> 1.2'
 
 #image upload to S3
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'fog', '~> 1.37.0'
 
 gem "font-awesome-rails"
